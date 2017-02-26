@@ -1,0 +1,516 @@
+
+* { margin: 0px; padding: 0px; }
+
+@font-face {
+    font-family: starwars; /*a name to be used later*/
+    src: url('../Starjedi.TTF'); /*URL to font*/
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: arial;
+    font-size: 12px;
+	background: #000 url('../images/bg.jpg');
+}
+
+section{
+	margin-top: 650px;
+}
+
+#who{
+	text-align:center;
+}
+
+.perso{
+	text-align: center;
+}
+
+.perso > img{
+	width:7%;
+	height: 7%;
+	border: solid 1px orange;
+	margin-left: 3px;
+}
+
+.name{
+	color: red;
+}
+
+ li:first-child{
+	margin-bottom: 8px;
+	font-size: 20px;
+}
+.choisirButton{
+	width: 100%;
+	height: 20px;
+	margin-top: 4px;
+}
+
+#combat{
+	height:250px;
+	padding-top: 12%;
+}
+
+.swapiElement {
+    display: inline-block;
+    color: white;
+    border: solid 2px white;
+    padding: 10px;
+	position: absolute;
+	background-color: black;
+	list-style: none;
+	text-align: left;
+	z-index: 2;
+}
+
+.star, .wars, .byline {
+  position: absolute;
+}
+
+.star {
+  animation: star 10s ease-out ;
+  font-family: starwars;
+  font-size: 150px;
+  top: -0.9em;
+  margin-left: 4.3%;
+  letter-spacing: 0.085em;
+  text-shadow: -2px 0 #FFE81F, 0 2px #FFE81F, 2px 0 #FFE81F, 0 -2px #FFE81F;
+  color: black;
+}
+.wars {
+  animation: wars 10s ease-out ;
+  font-family: 'starwars';
+  font-size: 150px;
+  bottom: -0.3em;
+  letter-spacing: 0.05em;
+  text-shadow: -2px 0 #FFE81F, 0 2px #FFE81F, 2px 0 #FFE81F, 0 -2px #FFE81F;
+  color: black;
+}
+.byline span {
+  animation: spin-letters 10s linear ;
+  display: inline-block;
+}
+.byline {
+  animation: move-byline 10s linear ;
+  color: #fff;
+  font-family: "ITC Serif Gothic", Lato;
+  font-size: 2.25em;
+  left: -2em;
+  letter-spacing: 0.4em;
+  right: -2em;
+  text-align: center;
+  text-transform: uppercase;
+  top: 29%;
+  margin-left: 13%;
+}
+
+.starwars-demo {
+  height: 17em;
+  left: 50%;
+  position: absolute;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 34em;
+  perspective: 800px;
+  transform-style: preserve3d;
+}
+
+.fire {
+  animation: animation 1s ease-in-out infinite alternate;
+  -moz-animation: animation 1s ease-in-out infinite alternate;
+  -webkit-animation: animation 1s ease-in-out infinite alternate;
+  -o-animation: animation 1s ease-in-out infinite alternate;
+}
+
+#persoChoosen{
+	width:20%;
+	float:left;
+	position: absolute;
+	height: 100%;
+}
+
+#persoChoosen > h3 {
+	font-size: 200%;
+	text-align:center;
+	position: relative;
+	color: black;
+	padding-bottom:1%;
+	z-index:10;
+}
+
+#persoChoosen > img{
+	width: 70%;
+	margin-left: 10%;
+	 display: block;
+    margin-left: auto;
+    margin-right: auto;
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+#fight{
+	width:60%;
+	float:left;
+	margin-left:20%;
+	margin-right: 20%;
+	position: absolute;
+	height: 250px;
+}
+
+#fight > button{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 15%;
+	color: #fff;
+    font-family: Sans-serif;
+    font-size: 20px;
+    height: 60px;
+    width: 200px;
+    line-height: 60px;
+    text-align: center;
+    border: 0;
+    transition: all 0.3s ease 0s;
+	background-color: transparent;
+	border: 2px solid darkred;
+	border-radius: 5px;
+	color: darkred;
+}
+
+#fight > button:hover {
+  background: darkorange;
+  color: white;
+  border: 0px solid transparent;
+}
+
+
+#divAdversaire{
+	width: 20%;
+	float:left;
+	margin-left:80%;
+	position: absolute;
+	height: 100%;
+}
+
+#divAdversaire > h3{
+	font-size: 200%;
+	text-align:center;
+	position: relative;
+	color: black;
+	padding-bottom:1%;
+}
+
+#divAdversaire > img {
+	width: 70%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.actionPlayer{
+	width:50%;
+	height: 100%;
+	position: absolute;
+}
+
+.actionPlayer > h4{
+	position:absolute;
+	margin-top:22%;
+	font-size: 17px;
+	text-align:center;
+}
+
+.actionPlayer > h4:nth-child(1){
+	margin-left: 40%;
+}
+
+.actionPlayer > h4:nth-child(5){
+	margin-left: 70%;
+}
+
+.actionPlayer > h4:nth-child(3){
+	margin-left: 10%;
+}
+
+.actionAdversaire{
+	width:50%;
+	height: 100%;
+	margin-left: 50%;
+}
+
+.attaque{
+	width:25%;
+	height:34%;
+	position: absolute;
+	margin-top:28%;
+	margin-left: 5%;
+	border: solid 2px green;
+}
+
+.defense{
+	width:25%;
+	height:34%;
+	position: absolute;
+	margin-top:28%;
+	margin-left: 35%;
+	border: solid 2px green;
+}
+
+.pouvoir{
+	width:25%;
+	height:34%;
+	position: absolute;
+	margin-top: 28%;
+	margin-left: 65%;
+	border: solid 2px green;
+}
+
+.falcon{
+	width: 50%;
+	height: 50%;
+	margin-top:20%;
+	margin-left:30%;
+	border: solid 3px orange;
+}
+
+.selected{
+	border: solid 3px red;
+}
+
+#scorePlayer{
+	font-size: 50px;
+	position:absolute;
+	margin-left: 45%;
+}
+
+
+#scoreAdversaire{
+	font-size: 50px;
+	position:absolute;
+	margin-left: 55%;
+}
+
+
+#trait{
+	font-size: 50px;
+	position:absolute;
+	margin-left: 51%;
+}
+
+.endTitle{
+	text-align: center;
+	font-size: 70px;
+	margin-bottom: 20px;
+}
+
+#bonus{
+	text-align: center;
+	font-size: 50px;
+	margin-bottom: 20px;
+	color: darkorange;
+}
+
+.video{
+	display: block;
+	margin: auto;
+	width: 90%;
+}
+
+/* Keyframes */
+@keyframes star {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-0.75em);
+  }
+  20% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes wars {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(0.5em);
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spin-letters {
+  0%, 10% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  30% {
+    opacity: 1;
+  }
+  70%, 86% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes move-byline {
+  0% {
+    transform: translateZ(5em);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+
+/*** Media queries for adjusting to different screen sizes ***/
+
+@media only screen and (max-width: 600px) {
+  .starwars-demo {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .starwars-demo {
+    font-size: 7px;
+  }
+}
+
+@keyframes animation
+{
+0% {box-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e,
+  0 0 20px #fefcc9 inset,
+  10px -10px 30px #feec85 inset,
+  -20px -20px 40px #ffae34 inset,
+  20px -40px 50px #ec760c inset,
+  -20px -60px 60px #cd4606 inset,
+  0 -80px 70px #973716 inset,
+  10px -90px 80px #451b0e inset}
+100% {box-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716,
+  0 0 20px #fefcc9 inset,
+  10px -10px 30px #fefcc9 inset,
+  -20px -20px 40px #feec85 inset,
+  22px -42px 60px #ffae34 inset,
+  -22px -58px 50px #ec760c inset,
+  0 -82px 80px #cd4606 inset,
+  10px -90px 80px  #973716 inset;}
+}
+
+@-moz-keyframes animation
+{
+0% {box-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e,
+  0 0 20px #fefcc9 inset,
+  10px -10px 30px #feec85 inset,
+  -20px -20px 40px #ffae34 inset,
+  20px -40px 50px #ec760c inset,
+  -20px -60px 60px #cd4606 inset,
+  0 -80px 70px #973716 inset,
+  10px -90px 80px #451b0e inset;}
+100% {box-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716,
+  0 0 20px #fefcc9 inset,
+  10px -10px 30px #fefcc9 inset,
+  -20px -20px 40px #feec85 inset,
+  22px -42px 60px #ffae34 inset,
+  -22px -58px 50px #ec760c inset,
+  0 -82px 80px #cd4606 inset,
+  10px -90px 80px  #973716 inset;}
+}
+
+@-webkit-keyframes animation
+{
+0% {box-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e,
+  0 0 20px #fefcc9 inset,
+  10px -10px 30px #feec85 inset,
+  -20px -20px 40px #ffae34 inset,
+  20px -40px 50px #ec760c inset,
+  -20px -60px 60px #cd4606 inset,
+  0 -80px 70px #973716 inset,
+  10px -90px 80px #451b0e inset;}
+100% {box-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716,
+  0 0 20px #fefcc9 inset,
+  10px -10px 30px #fefcc9 inset,
+  -20px -20px 40px #feec85 inset,
+  22px -42px 60px #ffae34 inset,
+  -22px -58px 50px #ec760c inset,
+  0 -82px 80px #cd4606 inset,
+  10px -90px 80px  #973716 inset;}
+}
+
+@-o-keyframes animation
+{
+0% {box-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e,
+  0 0 20px #fefcc9 inset,
+  10px -10px 30px #feec85 inset,
+  -20px -20px 40px #ffae34 inset,
+  20px -40px 50px #ec760c inset,
+  -20px -60px 60px #cd4606 inset,
+  0 -80px 70px #973716 inset,
+  10px -90px 80px #451b0e inset;}
+100% {box-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716,
+  0 0 20px #fefcc9 inset,
+  10px -10px 30px #fefcc9 inset,
+  -20px -20px 40px #feec85 inset,
+  22px -42px 60px #ffae34 inset,
+  -22px -58px 50px #ec760c inset,
+  0 -82px 80px #cd4606 inset,
+  10px -90px 80px  #973716 inset;}
+}
